@@ -1,9 +1,7 @@
-// pages/cart.tsx
-
 import React from 'react';
 import ShoppingCart from '@/components/Cart';
 
-const CartPage: React.FC = () => {
+const CartPage = () => {
   return (
     <div>
       <ShoppingCart />
