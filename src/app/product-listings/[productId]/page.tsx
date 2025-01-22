@@ -1,19 +1,14 @@
 
-import React from 'react';
-import { fetchProductById, Product } from '@/lib/api';
+
+import { Product } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProductPageProps {
-  params: {
-    productId: string;
-  };
+  product: Product | null;
 }
 
-const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
-  const { productId } = params;
-  const product = await fetchProductById(productId);
-
+const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
   if (!product || !product.dimensions) {
     return <p>Product not found</p>;
   }
