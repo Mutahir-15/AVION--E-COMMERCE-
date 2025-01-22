@@ -1,15 +1,13 @@
-
-
 import { Product } from '@/lib/api';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProductPageProps {
-  product: Product | null;
+  product?: Product; 
 }
 
 const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
-  if (!product || !product.dimensions) {
+  if (!product?.dimensions) {
     return <p>Product not found</p>;
   }
 
@@ -34,7 +32,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
           <p className="text-2xl font-semibold">${product.price}</p>
           <p className="text-lg">{product.description}</p>
           <p className="text-2xl font-semibold">Features:</p>
-          <p className="text-lg">{product.features}</p>
+          <p className="text-lg">{product.features || 'No features available'}</p>
           <p className="text-2xl font-semibold">Stock:</p>
           <p className="text-lg">{product.quantity}</p>
           <p className="text-2xl font-semibold">Dimensions:</p>
@@ -42,11 +40,13 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
             {`Width: ${width} cm, Height: ${height} cm, Depth: ${depth} cm`}
           </p>
           <h2 className="text-2xl font-bold mt-4">Tags</h2>
-          <p className="text-lg">{product.tags.join(', ')}</p>
+          <p className="text-lg">{product.tags?.join(', ') || 'No tags available'}</p>
           {/* Button */}
-          <button className="mt-8 px-4 py-2 sm:px-6 sm:py-3 bg-customColors-dark-primary text-white font-bold hover:bg-customColors-border-dark hover:text-black transition-colors duration-300 rounded">
-            <Link href="#">Add to Cart</Link>
-          </button>
+          <Link href="#">
+            <button className="mt-8 px-4 py-2 sm:px-6 sm:py-3 bg-customColors-dark-primary text-white font-bold hover:bg-customColors-border-dark hover:text-black transition-colors duration-300 rounded">
+              Add to Cart
+            </button>
+          </Link>
         </div>
       </section>
     </main>
