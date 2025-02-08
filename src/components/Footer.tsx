@@ -5,6 +5,7 @@ import { FaInstagram } from "react-icons/fa";
 import { IoLogoSkype } from "react-icons/io5";
 import { IoLogoTwitter } from "react-icons/io5";
 import { IoLogoPinterest } from "react-icons/io5";
+import Link from 'next/link';
 
 function Footer() {
   return (
@@ -18,7 +19,7 @@ function Footer() {
             <li>Best sellers</li>
             <li>Recently viewed</li>
             <li>Popular this week</li>
-            <li>All products</li>
+            <li><Link href={'/product-listings'}>All Products</Link></li>
           </ul>
         </div>
         {/* Categories Section */}
@@ -52,7 +53,7 @@ function Footer() {
               type="email"
               placeholder="your@email.com"
               required
-              className="p-3 mb-2 md:mb-0 bg-customColors-primary text-black md:mr-2 flex-grow"
+              className="p-3 mb-2 md:mb-0 bg-customColors-primary text-white md:mr-2 flex-grow"
             />
             <button className="p-3 bg-customColors-light-grey text-black font-medium hover:bg-gray-800 hover:text-white transition-colors duration-300">
               Sign up

@@ -48,11 +48,11 @@ const Listing = () => {
   if (status === 'error') return <p className="text-red-500 text-center">Failed to load products.</p>;
 
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4 bg-white">
+    <section className="max-w-[1440px] mx-auto py-16 px-4 bg-white">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <div key={product._id} className="p-4 border rounded-lg hover:shadow-lg transition duration-300">
-            <div className="h-48 w-full relative">
+            <div className="h-[300px] w-full relative">
               <Image
                 src={product.image_url}
                 alt={product.name}
