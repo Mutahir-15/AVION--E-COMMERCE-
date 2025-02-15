@@ -13,9 +13,11 @@ const CartPage = () => {
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
     if (newQuantity > 0) {
-      setCartItems(getCartItems());
+      updateCartQuantity(productId, newQuantity);
+    setCartItems(getCartItems());
     }
   };
+  
   const handleRemoveItem = (productId: string) => {
     removeFromCart(productId);
     setCartItems(getCartItems());
