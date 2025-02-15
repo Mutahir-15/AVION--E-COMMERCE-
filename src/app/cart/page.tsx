@@ -13,7 +13,6 @@ const CartPage = () => {
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
     if (newQuantity > 0) {
-      const updatedCart = updateCartQuantity(productId, newQuantity);
       setCartItems(getCartItems());
     }
   };
