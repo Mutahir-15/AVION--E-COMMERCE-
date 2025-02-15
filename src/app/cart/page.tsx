@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Product } from '@/types/types';
-import { getCartItems, removeFromCart } from '../actions/actions';
+import { getCartItems, updateCartQuantity, removeFromCart } from '../actions/actions';
 import Image from 'next/image';
 
 const CartPage = () => {
