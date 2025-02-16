@@ -1,1 +1,1 @@
-# This repo is only made for testings.
+# AVION E-Commerce Website.
